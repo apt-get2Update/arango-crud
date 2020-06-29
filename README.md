@@ -1,0 +1,2 @@
+# arango-crud
+POC ArangoDB
