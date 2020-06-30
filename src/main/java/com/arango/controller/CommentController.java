@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.swagger.annotations.ApiOperation;
-
 @RestController
 @RequestMapping("api/comments")
 public class CommentController {
@@ -27,7 +25,7 @@ public class CommentController {
         this.commentService = commentService;
     }
 
-    @ApiOperation(value = "Post comment for a topic") 
+    @ApiOperation(value = "Post comment for a topic")
     @RequestMapping(value = "/{topic}", method = RequestMethod.POST)
     public Comment postComment(@PathVariable String topic) {
         Comment comment = new Comment();
@@ -40,6 +38,5 @@ public class CommentController {
         List<Comment> list = commentService.getCommentsByTopic(topic);
         return list;
     }
-
 
 }
